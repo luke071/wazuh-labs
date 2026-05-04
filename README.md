@@ -23,6 +23,9 @@ Deploying Wazuh agents on Linux endpoints:
 
 ![login1](/assets/image2.png)
 
+Almost clean Rocky Linux 9, without network services for clients with an ssh server passed the test with 56%.
+![login1](/assets/image3.png)
+
 # Task 1
 ## Key elements of Linux monitoring in Wazuh  
 Monitor:  
