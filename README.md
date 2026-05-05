@@ -26,11 +26,12 @@ Deploying Wazuh agents on Linux endpoints:
 Almost clean Rocky Linux 9, without network services for clients with an ssh server passed the test with 56%.
 ![login1](/assets/image3.png)
 
+ 
 # Task 1
-## Key elements of Linux monitoring in Wazuh  
+## Logins and authentication 
 Monitor:  
-- SSH logins (successful and unsuccessful)  
-- Local logins (console)  
+- SSH logins   
+- Local logins   
 - Brute-force attempts  
 - Root logins  
 - Sudo and su usage  
@@ -42,7 +43,7 @@ Monitor:
 - Sudo usage  
 - Privilege escalations  
 - User creation/change  
-- Group changes (e.g., adding to sudoers)  
+- Group changes   
 
 # Task 3 
 ## File System Integrity (FIM)  
@@ -57,7 +58,7 @@ Monitor:
 ## Processes and running applications  
 Monitor:  
 - New system processes  
-- Unusual processes (e.g., mining, reverse shell)  
+- Unusual processes  
 - Processes started by root  
 - Long-running suspicious processes  
 
@@ -67,7 +68,7 @@ Monitor:
 - New outgoing connections  
 - Unusual ports  
 - Connections to unknown IP addresses  
-- Traffic from the server to the Internet (data exfiltration)  
+- Traffic from the server to the Internet 
 
 # Task 6 
 ## Package Installation and Modification  
@@ -91,7 +92,7 @@ Monitor:
 - /etc/hosts  
 - /etc/crontab and cron users  
 - Network configuration  
-- Firewall (nftables)  
+- Firewall  
 
 # Task 9 
 ## Changing the schedule (cron jobs)  
@@ -120,6 +121,14 @@ Monitor:
 - Kernel panic errors  
 - Kernel module loading  
 - Suspicious modules (insmod, modprobe)  
+
+# Task 13
+## Performance metrics
+Monitor:
+- CPU usage
+- CPU load
+- Memory utilization
+- Disk usage
 
 
 Task solutions coming soon 😃
