@@ -1,18 +1,46 @@
 # Installing Wazuh
 
+## Ubuntu 22.04 i Debian 12
+```bash
+curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
+sudo bash ./wazuh-install.sh -a
+```
+
+Open ports in firewall:
+```bash
+sudo ufw allow 443/tcp
+sudo ufw allow 1514/tcp
+sudo ufw allow 1515/tcp
+
+sudo ufw reload
+sudo ufw status numbered
+```
+
+## Rocky Linux 9
 ```bash
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 bash wazuh-install.sh
 
 ```
-Open port in firewall on RHEL 9:
+Open ports in firewall:
 ```bash
-firewall-cmd --permanent --add-port=443/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
 sudo firewall-cmd --permanent --add-port=1514/tcp
 sudo firewall-cmd --permanent --add-port=1514/udp
 sudo firewall-cmd --permanent --add-port=1515/tcp
+
 sudo firewall-cmd --reload
+sudo firewall-cmd --list-ports
 ```
+
+Sprawdzenie usług po instalacji:
+```bash
+sudo systemctl status wazuh-manager
+sudo systemctl status wazuh-indexer
+sudo systemctl status wazuh-dashboard
+```
+
+
 The Wazuh web interface is accessible via the address:  
  `https://wazuh-dashboard-ip:443` 
 
