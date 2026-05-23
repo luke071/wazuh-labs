@@ -1,6 +1,6 @@
 # Installing Wazuh
 
-## Ubuntu 22.04 i Debian 12
+## Ubuntu 22.04 and Debian 12
 ```bash
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
 sudo bash ./wazuh-install.sh -a
@@ -33,13 +33,44 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --list-ports
 ```
 
-Sprawdzenie usług po instalacji:
+Checking services after installation:
 ```bash
 sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-indexer
 sudo systemctl status wazuh-dashboard
 ```
 
+Installation logs:
+```bash
+cat /var/log/wazuh-install.log
+```
+Wazuh service logs:
+```bash
+sudo journalctl -u wazuh-manager
+sudo journalctl -u wazuh-indexer
+sudo journalctl -u wazuh-dashboard
+```
+## Wazuh Logs
+Live logs:
+```bash
+sudo journalctl -fu wazuh-manager
+```
+Last 50 lines:
+```bash
+sudo journalctl -u wazuh-indexer -n 50
+```
+Logs from today:
+```bash
+sudo journalctl -u wazuh-dashboard --since today
+```
+Only errors:
+```bash
+sudo journalctl -p err -u wazuh-indexer
+```
+Security alert log:
+```bash
+tail -f /var/ossec/logs/alerts/alerts.log
+```
 
 The Wazuh web interface is accessible via the address:  
  `https://wazuh-dashboard-ip:443` 
@@ -48,6 +79,11 @@ The Wazuh web interface is accessible via the address:
 
 Deploying Wazuh agents on Linux endpoints:  
 `https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-linux.html`
+
+Agent logs:
+```bash
+/var/ossec/logs/ossec.log
+```
 
 ![login1](/assets/image2.png)
 
