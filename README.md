@@ -194,5 +194,18 @@ Monitor:
 - Memory utilization
 - Disk usage
 
+# Task 14
+## Docker 
+Monitor:
+- Container events
+- Docker image changes
+- Container configuration changes
+- Container network events
 
-Task solutions coming soon 😃
+# Task 15
+## Backend Services
+Monitor:
+- NGINX 
+- Apache HTTPD 
+- PostgreSQL 
+- Node.js 
