@@ -32,6 +32,7 @@ sudo firewall-cmd --permanent --add-port=1515/tcp
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-ports
 ```
+## Wazuh Status and Restart — Ubuntu 22.04 / Debian 12
 
 Checking services after installation:
 ```bash
@@ -39,7 +40,14 @@ sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-indexer
 sudo systemctl status wazuh-dashboard
 ```
+Restarting all Wazuh services:
+```bash
+sudo systemctl restart wazuh-manager
+sudo systemctl restart wazuh-indexer
+sudo systemctl restart wazuh-dashboard
+```
 
+## Wazuh Logs
 Installation logs:
 ```bash
 cat /var/log/wazuh-install.log
@@ -50,7 +58,6 @@ sudo journalctl -u wazuh-manager
 sudo journalctl -u wazuh-indexer
 sudo journalctl -u wazuh-dashboard
 ```
-## Wazuh Logs
 Live logs:
 ```bash
 sudo journalctl -fu wazuh-manager
